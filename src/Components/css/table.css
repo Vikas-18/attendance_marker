@@ -1,0 +1,15 @@
+.complain-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.complain-table th,
+.complain-table td {
+  border: 2px solid #000000;
+  padding: 8px;
+}
+
+.complain-table th {
+  background-color: #f2f2f2;
+}
