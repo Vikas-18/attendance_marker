@@ -8,7 +8,7 @@ const Attendance = () => {
 
   useEffect(() => {
     // Fetch teacher authentication status from the server
-    fetch("http://localhost:5000/teacherAuthenticationStatus")
+    fetch("https://serverattendance.onrender.com/teacherAuthenticationStatus")
       .then((response) => response.json())
       .then((data) => {
         setIsAccessAllowed(data.success);

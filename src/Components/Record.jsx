@@ -10,7 +10,7 @@ const Record = () => {
   useEffect(() => {
     // Make an API call to fetch results data
     axios
-      .get("http://localhost:5000/getResults")
+      .get("https://serverattendance.onrender.com/getResults")
       .then((response) => {
         setResults(response.data.results);
       })

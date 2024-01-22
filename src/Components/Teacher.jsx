@@ -9,7 +9,7 @@ const Teacher = () => {
   const handleAuthentication = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/authenticateTeacher",
+        "https://serverattendance.onrender.com/authenticateTeacher",
         {
           method: "POST",
           headers: {
