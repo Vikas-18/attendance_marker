@@ -1,11 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 footer {
-    margin-top: auto;
-    background-color: #9df1df;
-    padding: 10px;
-    text-align: center;
+  margin-top: auto;
+  background-color: #9df1df;
+  padding: 10px;
+  text-align: center;
+}
+text {
+  color: black;
 }

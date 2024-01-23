@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./css/teacher.css";
 
 const Teacher = () => {
   const [password, setPassword] = useState("");
@@ -68,7 +69,7 @@ const Teacher = () => {
   };
 
   return (
-    <div>
+    <div className="teacher">
       <ToastContainer />
       <h2>Teacher</h2>
       <div>
@@ -78,12 +79,28 @@ const Teacher = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleAuthentication}>Authenticate</button>
+        <button
+          onClick={handleAuthentication}
+          class="button-82-pushable"
+          role="button"
+        >
+          <span class="button-82-shadow"></span>
+          <span class="button-82-edge"></span>
+          <span class="button-82-front text">Allow Access</span>
+        </button>
       </div>
       {authenticated && (
         <div>
           {/* Render the logout button only if authenticated */}
-          <button onClick={handleLogout}>Logout</button>
+          <button
+            onClick={handleLogout}
+            class="button-82-pushable"
+            role="button"
+          >
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span class="button-82-front text">Logout</span>
+          </button>
         </div>
       )}
     </div>

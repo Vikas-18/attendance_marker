@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import "./css/attendance.css";
 const Attendance = () => {
   const [rollNumber, setRollNumber] = useState("");
   const [isAccessAllowed, setIsAccessAllowed] = useState(false);
@@ -93,7 +93,7 @@ const Attendance = () => {
   };
 
   return (
-    <div>
+    <div className="attendance">
       <ToastContainer />
       <h2>Attendance</h2>
       <form onSubmit={handleSubmit}>
@@ -106,7 +106,11 @@ const Attendance = () => {
             required
           />
         </label>
-        <button type="submit">Mark Attendance</button>
+        <button class="button-82-pushable" role="button">
+          <span class="button-82-shadow"></span>
+          <span class="button-82-edge"></span>
+          <span class="button-82-front text">Mark Attendance</span>
+        </button>
       </form>
     </div>
   );
