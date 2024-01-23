@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer-wrapper">
       <footer>
-        <h5>Designed and Developed by The Innovation Ninjas</h5>
+        <h5>Designed and Developed by VK</h5>
         <h5>{currentYear} © All Rights Reserved</h5>
       </footer>
     </div>

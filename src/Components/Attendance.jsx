@@ -70,7 +70,7 @@ const Attendance = () => {
         }
       })
       .catch((error) => {
-        console.error("Error sending location to API:", error);
+        console.error("Error", error);
         showToast("Error sending location data. Please try again.", "error");
       });
   };

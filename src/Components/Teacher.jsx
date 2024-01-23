@@ -39,18 +39,21 @@ const Teacher = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://serverattendance.onrender.com/logout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       const result = await response.json();
 
       if (result.success) {
         // Teacher logged out successfully, show success toast
-        toast.success("Teacher logged out successfully");
+        toast.success("Logged out successfully");
         // Update the authentication status
         setAuthenticated(false);
       } else {

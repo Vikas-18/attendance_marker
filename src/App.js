@@ -5,6 +5,7 @@ import HomePage from "./Components/HomePage";
 import Attendance from "./Components/Attendance";
 import Record from "./Components/Record";
 import Teacher from "./Components/Teacher";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/record" element={<Record />} />
         <Route path="/admin" element={<Teacher />} />
       </Routes>
+      <Footer />
     </BrowserRouter> //used for navigating without rendering pages again and again
   );
 };
