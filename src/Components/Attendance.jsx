@@ -106,7 +106,7 @@ const Attendance = () => {
             required
           />
         </label>
-        <button class="button-82-pushable" role="button">
+        <button class="button-82-pushable">
           <span class="button-82-shadow"></span>
           <span class="button-82-edge"></span>
           <span class="button-82-front text">Mark Attendance</span>

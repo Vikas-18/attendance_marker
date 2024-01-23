@@ -79,11 +79,7 @@ const Teacher = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button
-          onClick={handleAuthentication}
-          class="button-82-pushable"
-          role="button"
-        >
+        <button onClick={handleAuthentication} class="button-82-pushable">
           <span class="button-82-shadow"></span>
           <span class="button-82-edge"></span>
           <span class="button-82-front text">Allow Access</span>
@@ -92,14 +88,8 @@ const Teacher = () => {
       {authenticated && (
         <div>
           {/* Render the logout button only if authenticated */}
-          <button
-            onClick={handleLogout}
-            class="button-82-pushable"
-            role="button"
-          >
-            <span class="button-82-shadow"></span>
-            <span class="button-82-edge"></span>
-            <span class="button-82-front text">Logout</span>
+          <button onClick={handleLogout} class="button-24">
+            Logout
           </button>
         </div>
       )}
