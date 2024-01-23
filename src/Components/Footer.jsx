@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="footer-wrapper">
-      <footer className="text">
+      <footer>
         <h5>Designed and Developed by VK</h5>
         <h5>{currentYear} © All Rights Reserved</h5>
       </footer>
