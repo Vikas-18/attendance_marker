@@ -46,7 +46,7 @@ const Attendance = () => {
   };
 
   const sendLocationToAPI = (latitude, longitude) => {
-    const apiEndpoint = "http://localhost:5000/markAttendance";
+    const apiEndpoint = "https://serverattendance.onrender.com/markAttendance";
 
     fetch(apiEndpoint, {
       method: "POST",
