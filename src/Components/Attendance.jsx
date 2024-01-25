@@ -64,12 +64,9 @@ const Attendance = () => {
         console.log("API response:", data);
 
         if (data.success) {
-          showToast(
-            `Attendance marked successfully. Distance: ${data.distance} km`,
-            "success"
-          );
+          showToast("Attendance marked successfully", "success");
         } else {
-          showToast(`${data.message}`, "error");
+          showToast(` ${data.message}`, "error");
         }
       })
       .catch((error) => {
