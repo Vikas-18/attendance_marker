@@ -25,8 +25,15 @@ const Teacher = () => {
       if (result.success) {
         // Teacher authenticated successfully, show success toast
         toast.success("Teacher authenticated successfully");
-        // Update the authentication status
-        setAuthenticated(true);
+
+        // Update the authentication status only if allowed
+        if (result.isAllowed) {
+          setAuthenticated(true);
+        } else {
+          // If not allowed, show a toast and set authenticated to false
+          toast.error("Teacher is not allowed to access attendance");
+          setAuthenticated(false);
+        }
       } else {
         // Authentication failed, show error toast
         toast.error(`Authentication failed: ${result.message}`);

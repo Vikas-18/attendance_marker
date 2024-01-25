@@ -106,11 +106,19 @@ const Attendance = () => {
             required
           />
         </label>
-        <button class="button-82-pushable">
-          <span class="button-82-shadow"></span>
-          <span class="button-82-edge"></span>
-          <span class="button-82-front text">Mark Attendance</span>
+        <button
+          disabled={!isAccessAllowed} // Disable the button if access is not allowed
+          className="button-82-pushable"
+        >
+          <span className="button-82-shadow"></span>
+          <span className="button-82-edge"></span>
+          <span className="button-82-front text">Mark Attendance</span>
         </button>
+        {!isAccessAllowed && (
+          <p className="access-warning">
+            Teacher has not allowed attendance marking yet.
+          </p>
+        )}
       </form>
     </div>
   );
