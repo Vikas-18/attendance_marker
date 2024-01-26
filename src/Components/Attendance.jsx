@@ -12,9 +12,6 @@ const Attendance = () => {
       .then((response) => response.json())
       .then((data) => {
         setIsAccessAllowed(data.success);
-      })
-      .catch((error) => {
-        console.error("Error fetching teacher authentication status:", error);
       });
   }, []);
 
@@ -25,21 +22,15 @@ const Attendance = () => {
     }
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          console.log(latitude);
-          console.log(longitude);
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
 
-          // Send the location and roll number to the API
-          sendLocationToAPI(latitude, longitude);
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-          showToast("Error getting user location. Please try again.", "error");
-        }
-      );
+        // Send the location and roll number to the API
+        sendLocationToAPI(latitude, longitude);
+      });
     } else {
       showToast("Geolocation is not supported by this browser", "error");
     }
@@ -61,17 +52,11 @@ const Attendance = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("API response:", data);
-
         if (data.success) {
           showToast("Attendance marked successfully", "success");
         } else {
           showToast(` ${data.message}`, "error");
         }
-      })
-      .catch((error) => {
-        console.error("Error", error);
-        showToast("Error sending location data. Please try again.", "error");
       });
   };
 
@@ -106,19 +91,11 @@ const Attendance = () => {
             required
           />
         </label>
-        <button
-          disabled={!isAccessAllowed} // Disable the button if access is not allowed
-          className="button-82-pushable"
-        >
+        <button className="button-82-pushable">
           <span className="button-82-shadow"></span>
           <span className="button-82-edge"></span>
           <span className="button-82-front text">Mark Attendance</span>
         </button>
-        {!isAccessAllowed && (
-          <p className="access-warning">
-            Teacher has not allowed attendance marking yet.
-          </p>
-        )}
       </form>
     </div>
   );
