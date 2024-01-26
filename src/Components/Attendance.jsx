@@ -16,7 +16,7 @@ const Attendance = () => {
   }, []);
 
   const getUserLocation = () => {
-    if (!setIsAccessAllowed) {
+    if (isAccessAllowed) {
       showToast("Teacher has not allowed attendance marking yet.", "error");
       return;
     }
