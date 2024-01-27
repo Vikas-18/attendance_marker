@@ -12,7 +12,7 @@ const Attendance = () => {
       .then((response) => response.json())
       .then((data) => {
         // Check conditions for authentication
-        if (data.isAllowed === false) {
+        if (data.isAllowed === true) {
           setIsAccessAllowed(true);
         } else {
           setIsAccessAllowed(false);
