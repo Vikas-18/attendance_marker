@@ -11,7 +11,12 @@ const Attendance = () => {
     fetch("https://serverattendance.onrender.com/teacherAuthenticationStatus")
       .then((response) => response.json())
       .then((data) => {
-        setIsAccessAllowed(data.success);
+        // Check conditions for authentication
+        if (data.isAllowed === false) {
+          setIsAccessAllowed(true);
+        } else {
+          setIsAccessAllowed(false);
+        }
       });
   }, []);
 
@@ -25,8 +30,6 @@ const Attendance = () => {
       navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        console.log(latitude);
-        console.log(longitude);
 
         // Send the location and roll number to the API
         sendLocationToAPI(latitude, longitude);
