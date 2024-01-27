@@ -5,6 +5,7 @@ import "./css/teacher.css";
 
 const Teacher = () => {
   const [password, setPassword] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
 
   const handleAuthentication = async () => {
     const response = await fetch(
@@ -17,11 +18,11 @@ const Teacher = () => {
         body: JSON.stringify({ password }),
       }
     );
-
     const result = await response.json();
 
     if (result.success) {
       // Teacher authenticated successfully, show success toast
+      setAuthenticated = true;
       toast.success("Teacher authenticated successfully");
       console.log(
         "https://serverattendance.onrender.com/teacherAuthenticationStatus"
@@ -49,13 +50,13 @@ const Teacher = () => {
     );
     if (result.success) {
       // Teacher logged out successfully, show success toast
+      setAuthenticated = false;
       toast.success("Logged out successfully");
     } else {
       // Logout failed, show error toast
       toast.error(`Logout failed: ${result.message}`);
     }
   };
-
   return (
     <div className="teacher">
       <ToastContainer />
@@ -67,19 +68,21 @@ const Teacher = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleAuthentication} class="button-82-pushable">
-          <span class="button-82-shadow"></span>
-          <span class="button-82-edge"></span>
-          <span class="button-82-front text">Allow Access</span>
+        <button onClick={handleAuthentication} className="button-82-pushable">
+          <span className="button-82-shadow"></span>
+          <span className="button-82-edge"></span>
+          <span className="button-82-front text">Allow Access</span>
         </button>
-        <button onClick={handleLogout} class="button-82-pushable">
-          <span class="button-82-shadow"></span>
-          <span class="button-82-edge"></span>
-          <span class="button-82-front text">Logout</span>
-        </button>
+        {authenticated && (
+          <button onClick={handleLogout} className="button-82-pushable">
+            <span className="button-82-shadow"></span>
+            <span className="button-82-edge"></span>
+            <span className="button-82-front text">Logout</span>
+          </button>
+        )}
       </div>
     </div>
   );
 };
 
-export default Teacher;
+export default TeacherComponent;
