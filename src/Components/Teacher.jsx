@@ -72,7 +72,7 @@ const Teacher = () => {
           <span class="button-82-edge"></span>
           <span class="button-82-front text">Allow Access</span>
         </button>
-        <button onClick={handleAuthentication} class="button-82-pushable">
+        <button onClick={handleLogout} class="button-82-pushable">
           <span class="button-82-shadow"></span>
           <span class="button-82-edge"></span>
           <span class="button-82-front text">Logout</span>
