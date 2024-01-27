@@ -85,4 +85,4 @@ const Teacher = () => {
   );
 };
 
-export default TeacherComponent;
+export default Teacher;
