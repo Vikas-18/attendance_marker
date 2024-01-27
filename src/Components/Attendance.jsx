@@ -57,6 +57,7 @@ const Attendance = () => {
       .then((data) => {
         if (data.success) {
           showToast("Attendance marked successfully", "success");
+          window.location.reload();
         } else {
           showToast(` ${data.message}`, "error");
         }
