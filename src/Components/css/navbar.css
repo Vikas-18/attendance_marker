@@ -12,13 +12,9 @@
 
 .navbar {
   height: 60px;
-  background: #d3959b;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #bfe6ba, #d3959b);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #bfe6ba, #d3959b);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #fffc9b;
   position: relative;
+  z-index: 1000;
 }
 
 .menu-icon {
@@ -79,7 +75,7 @@
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #fef7e5;
+    background-color: #fffc9b;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
