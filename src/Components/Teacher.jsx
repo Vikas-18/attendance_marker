@@ -22,7 +22,7 @@ const Teacher = () => {
 
     if (result.success) {
       // Teacher authenticated successfully, show success toast
-      setAuthenticated = true;
+      setAuthenticated(true);
       toast.success("Teacher authenticated successfully");
       console.log(
         "https://serverattendance.onrender.com/teacherAuthenticationStatus"
@@ -50,7 +50,7 @@ const Teacher = () => {
     );
     if (result.success) {
       // Teacher logged out successfully, show success toast
-      setAuthenticated = false;
+      setAuthenticated(false);
       toast.success("Logged out successfully");
     } else {
       // Logout failed, show error toast
@@ -61,7 +61,8 @@ const Teacher = () => {
     <div className="teacher">
       <ToastContainer />
       <h2>Teacher</h2>
-      <div>
+
+      <div className="form">
         <label>Password:</label>
         <input
           type="password"
@@ -74,7 +75,7 @@ const Teacher = () => {
           <span className="button-82-front text">Allow Access</span>
         </button>
         {authenticated && (
-          <button onClick={handleLogout} className="button-82-pushable">
+          <button onClick={handleLogout} className="button-82-pushable btn">
             <span className="button-82-shadow"></span>
             <span className="button-82-edge"></span>
             <span className="button-82-front text">Logout</span>
