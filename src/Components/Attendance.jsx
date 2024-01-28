@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./css/attendance.css";
+
 const Attendance = () => {
   const [rollNumber, setRollNumber] = useState("");
   const [isAccessAllowed, setIsAccessAllowed] = useState(false);
@@ -31,7 +32,7 @@ const Attendance = () => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
-        // Send the location and roll number to the API
+        // Send the location, roll number, and date to the API
         sendLocationToAPI(latitude, longitude);
       });
     } else {
